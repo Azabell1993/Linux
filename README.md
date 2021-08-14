@@ -19,3 +19,4 @@ Make of Linux API Programming.
 **az_putchar : getchar() -> 어셈블리어의 첫 내장함수 연습.**  
 ======================================================  
 # Linux
+# Linux
