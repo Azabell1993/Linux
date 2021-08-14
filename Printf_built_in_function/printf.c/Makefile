@@ -33,7 +33,6 @@ OBJ = az_printf.o \
 	  $(PATH_LIB)az_putchar_fd.o \
 	  $(PATH_LIB)az_putendl_fd.o \
 	  $(PATH_LIB)az_putnbr.o \
-	  $(PATH_LIB)az_putnbr_fd.o \
 	  $(PATH_LIB)az_putstr.o \
 	  $(PATH_LIB)az_putstr_fd.o \
 	  $(PATH_LIB)az_strcat.o \
@@ -68,10 +67,8 @@ OBJ = az_printf.o \
 	  $(PATH_LIB)az_strbchr.o \
 	  $(PATH_LIB)az_chrpos.o \
 	  $(PATH_LIB)az_putchar_endl.o \
-	  $(PATH_LIB)az_putnbr_endl.o \
 	  $(PATH_LIB)az_puthex.o \
 	  $(PATH_LIB)az_nbrlen.o \
-	  $(PATH_LIB)az_puthex_pf.o \
 	  $(PATH_LIB)az_putoctal.o \
 	  $(PATH_LIB)az_putunsigned.o \
 	  $(PATH_LIB)az_wchrlen.o \
