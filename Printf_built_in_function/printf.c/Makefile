@@ -12,12 +12,8 @@ OBJ = az_printf.o \
 	  $(PATH_LIB)az_itoa.o \
 	  $(PATH_LIB)az_itoa_base.o \
 	  $(PATH_LIB)az_bzero.o \
-	  $(PATH_LIB)az_isalnum.o \
 	  $(PATH_LIB)az_isalpha.o \
-	  $(PATH_LIB)az_isascii.o \
 	  $(PATH_LIB)az_isdigit.o \
-	  $(PATH_LIB)az_ishex.o \
-	  $(PATH_LIB)az_islower.o \
 	  $(PATH_LIB)az_isprint.o \
 	  $(PATH_LIB)az_isupper.o \
 	  $(PATH_LIB)az_memalloc.o \
@@ -63,10 +59,8 @@ OBJ = az_printf.o \
 	  $(PATH_LIB)az_strsub.o \
 	  $(PATH_LIB)az_strtrim.o \
 	  $(PATH_LIB)az_tolower.o \
-	  $(PATH_LIB)az_toupper.o \
 	  $(PATH_LIB)az_strbchr.o \
 	  $(PATH_LIB)az_chrpos.o \
-	  $(PATH_LIB)az_putchar_endl.o \
 	  $(PATH_LIB)az_puthex.o \
 	  $(PATH_LIB)az_nbrlen.o \
 	  $(PATH_LIB)az_putoctal.o \

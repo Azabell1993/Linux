@@ -6,6 +6,7 @@
 #include <unistd.h>
 
 void		az_putchar(char c);
+void		az_putchar_fd(char c, int fd);
 void		az_putnbr(int n);
 void		az_putstr(const char *s);
 void		*az_memset(void *b, int c, size_t len);
@@ -20,7 +21,6 @@ void		az_strclr(char *s);
 void		az_striter(char *s, void (*f)(char *));
 void		az_striteri(char *s, void (*f)(unsigned int, char *));
 void		az_putendl(char const *s);
-void		az_putchar_fd(char c, int fd);
 void		az_putstr_fd(char const *s, int fd);
 void		az_putendl_fd(char const *s, int fd);
 void		az_puthex(unsigned int n);
