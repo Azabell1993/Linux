@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+
+export PATH=$PATH:\{GRADLE_PATH\}/gradle-4.0/bin
+
+export PATH=$PATH:/Util/stlink
+
+export PATH=$PATH:/opt
+
+
+eval "$(thefuck --alias)"
+

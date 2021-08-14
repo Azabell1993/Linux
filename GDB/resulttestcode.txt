@@ -1,0 +1,53 @@
+#	linux kernel practice
+#	how to make this file
+#	(echo disas main | gdb testcode) > resulttestcode.txt
+#	then, make this file in the your linux kernel address.
+
+GNU gdb (GDB) 10.2
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from testcode...
+(No debugging symbols found in testcode)
+(gdb) Dump of assembler code for function main:
+   0x0000000000001139 <+0>:	push   %rbp
+   0x000000000000113a <+1>:	mov    %rsp,%rbp
+   0x000000000000113d <+4>:	sub    $0x10,%rsp
+   0x0000000000001141 <+8>:	movl   $0x0,-0xc(%rbp)
+   0x0000000000001148 <+15>:	jmp    0x118b <main+82>
+   0x000000000000114a <+17>:	mov    -0xc(%rbp),%eax
+   0x000000000000114d <+20>:	mov    %eax,%edx
+   0x000000000000114f <+22>:	shr    $0x1f,%edx
+   0x0000000000001152 <+25>:	add    %edx,%eax
+   0x0000000000001154 <+27>:	sar    %eax
+   0x0000000000001156 <+29>:	mov    %eax,%edx
+   0x0000000000001158 <+31>:	mov    -0xc(%rbp),%eax
+   0x000000000000115b <+34>:	add    %edx,%eax
+   0x000000000000115d <+36>:	pxor   %xmm0,%xmm0
+   0x0000000000001161 <+40>:	cvtsi2sd %eax,%xmm0
+   0x0000000000001165 <+44>:	movsd  %xmm0,-0x8(%rbp)
+   0x000000000000116a <+49>:	mov    -0x8(%rbp),%rax
+   0x000000000000116e <+53>:	movq   %rax,%xmm0
+   0x0000000000001173 <+58>:	lea    0xe8a(%rip),%rax        # 0x2004
+   0x000000000000117a <+65>:	mov    %rax,%rdi
+   0x000000000000117d <+68>:	mov    $0x1,%eax
+   0x0000000000001182 <+73>:	call   0x1030 <printf@plt>
+   0x0000000000001187 <+78>:	addl   $0x1,-0xc(%rbp)
+   0x000000000000118b <+82>:	cmpl   $0x4,-0xc(%rbp)
+   0x000000000000118f <+86>:	jle    0x114a <main+17>
+   0x0000000000001191 <+88>:	mov    $0x0,%eax
+   0x0000000000001196 <+93>:	leave  
+   0x0000000000001197 <+94>:	ret    
+End of assembler dump.
+(gdb) quit

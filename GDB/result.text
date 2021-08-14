@@ -1,0 +1,53 @@
+GNU gdb (GDB) 10.2
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-pc-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from test...
+(No debugging symbols found in test)
+(gdb) Dump of assembler code for function main:
+   0x0000000000001149 <+0>:	push   %rbp
+   0x000000000000114a <+1>:	mov    %rsp,%rbp
+   0x000000000000114d <+4>:	sub    $0x10,%rsp
+   0x0000000000001151 <+8>:	movl   $0x0,-0x8(%rbp)
+   0x0000000000001158 <+15>:	movl   $0x0,-0x4(%rbp)
+   0x000000000000115f <+22>:	movl   $0x0,-0x8(%rbp)
+   0x0000000000001166 <+29>:	jmp    0x11a4 <main+91>
+   0x0000000000001168 <+31>:	movl   $0x0,-0x4(%rbp)
+   0x000000000000116f <+38>:	jmp    0x119a <main+81>
+   0x0000000000001171 <+40>:	mov    -0x8(%rbp),%eax
+   0x0000000000001174 <+43>:	imul   -0x4(%rbp),%eax
+   0x0000000000001178 <+47>:	mov    %eax,%ecx
+   0x000000000000117a <+49>:	mov    -0x4(%rbp),%edx
+   0x000000000000117d <+52>:	mov    -0x8(%rbp),%eax
+   0x0000000000001180 <+55>:	mov    %eax,%esi
+   0x0000000000001182 <+57>:	lea    0xe7b(%rip),%rax        # 0x2004
+   0x0000000000001189 <+64>:	mov    %rax,%rdi
+   0x000000000000118c <+67>:	mov    $0x0,%eax
+   0x0000000000001191 <+72>:	call   0x1030 <printf@plt>
+   0x0000000000001196 <+77>:	addl   $0x1,-0x4(%rbp)
+   0x000000000000119a <+81>:	cmpl   $0x3,-0x4(%rbp)
+   0x000000000000119e <+85>:	jle    0x1171 <main+40>
+   0x00000000000011a0 <+87>:	addl   $0x1,-0x8(%rbp)
+   0x00000000000011a4 <+91>:	cmpl   $0x3,-0x8(%rbp)
+   0x00000000000011a8 <+95>:	jle    0x1168 <main+31>
+   0x00000000000011aa <+97>:	lea    0xe6a(%rip),%rax        # 0x201b <__PRETTY_FUNCTION__.0>
+   0x00000000000011b1 <+104>:	mov    %rax,%rcx
+   0x00000000000011b4 <+107>:	mov    $0xe,%edx
+   0x00000000000011b9 <+112>:	lea    0xe52(%rip),%rax        # 0x2012
+   0x00000000000011c0 <+119>:	mov    %rax,%rsi
+   0x00000000000011c3 <+122>:	lea    0xe4f(%rip),%rax        # 0x2019
+   0x00000000000011ca <+129>:	mov    %rax,%rdi
+   0x00000000000011cd <+132>:	call   0x1040 <__assert_fail@plt>
+End of assembler dump.
+(gdb) quit
