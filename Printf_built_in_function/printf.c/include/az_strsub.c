@@ -17,3 +17,4 @@ char	*az_strsub(char const *s, unsigned int start, size_t len)
 	tmp[i] = '\0';
 	return (tmp);
 }
+

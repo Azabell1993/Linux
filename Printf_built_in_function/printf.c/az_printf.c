@@ -418,7 +418,7 @@ void	az_x(va_list ap, char *format, char flag)
 	if (flag == '#' && az_strchr(format, 'X'))
 		az_putstr("0X");
 	if (x && az_strchr(format, 'X'))
-		az_putstr(az_itoa_base(x, 16));
+		az_putstr(az_itoa(x, 16));
 	if (x && !param && !az_strchr(format, 'X'))
 		az_puthex(x);
 }
