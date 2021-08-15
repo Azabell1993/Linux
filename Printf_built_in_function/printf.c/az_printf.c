@@ -229,6 +229,7 @@ int		az_output(char *format, char flag, va_list ap, int i)
 
 // az_nbrlen : include folder
 // az_strsub : include folder
+//chrpos : 마지막 위치 반환.
 // az_chrpos : include folder
 
 void	az_o_support(int o, int param, char flag, char f_addon)
@@ -236,7 +237,7 @@ void	az_o_support(int o, int param, char flag, char f_addon)
 	if (o)
 	{
 		if (flag == '+' && param > 0)
-			az_fill(param - az_nbrlen(o), ' ');
+			az_fill(param - az_nbrlen(o), ' ');	
 		if (flag == '0' && param > 0)
 			az_fill(param - az_nbrlen(o), '0');
 		if (flag == '#')
@@ -245,7 +246,7 @@ void	az_o_support(int o, int param, char flag, char f_addon)
 				az_fill(param - az_nbrlen(o), ' ');
 			az_putchar('0');
 		}
-		az_putoctal(o);
+		az_putoctal(o);									//putoctal include folder
 		if (flag == '#' && f_addon == '-')
 			az_fill(param - az_nbrlen(o), ' ');
 		if (flag == '-' && param > 0)
@@ -259,9 +260,8 @@ void	az_o_support_p2(char flag, char *fmt, char f_addon)
 	int		param;
 
 	param = '\0';
-	if (flag == '-' && f_addon == '0')
-	{
-		if (az_chrpos(fmt, '#') > 0)
+	if (flag == '-' && f_a
+			chrpos(fmt, '#') > 0)
 		{
 			az_putchar('0');
 			tmp = az_strsub(fmt, az_chrpos(fmt, '0') + 1, az_strlen(fmt));
@@ -497,7 +497,7 @@ void	az_u(va_list ap, char *format, char flag)
 		az_fill((param - u_length), '0');
 	if (param)
 		az_fill(param - u_length, ' ');
-	az_putunsigned(u);
+	az_putunsigned(u);										//az__putunsigned include folder
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

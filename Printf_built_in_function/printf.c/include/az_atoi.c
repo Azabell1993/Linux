@@ -9,9 +9,12 @@ int		az_atoi(const char *s)
 
 	i = 0;
 	conv = 0;
+	
 	neg_chk = 1;
+
 	if (s == NULL)
 		return (0);
+
 	if (s[i] == '-')
 	{
 		neg_chk = -1;
