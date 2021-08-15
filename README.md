@@ -8,15 +8,16 @@ Make of Linux API Programming.
 
 **Printf_built_in_function : printf 모방 내장함수**  
 =================================================  
+![프린트에프 수정](https://user-images.githubusercontent.com/75885992/129451421-eeef915d-f678-4d48-9cbb-a3dbb8d44a9f.png)
+![프린트에프 수정2](https://user-images.githubusercontent.com/75885992/129451425-409be4bc-5f45-462f-8b74-6df576aaebcb.png)
+![프린트에프 결과](https://user-images.githubusercontent.com/75885992/129451427-04508ad3-eede-4784-ab61-b9043eeb120c.png)
 
-![makefile](https://user-images.githubusercontent.com/75885992/127012497-59ceabcd-2437-475c-98e9-1d260a8d6f82.png)  
-![1](https://user-images.githubusercontent.com/75885992/127012511-85ea2b91-63e6-442b-a89f-53b866bed783.png)  
-![tree](https://user-images.githubusercontent.com/75885992/127012526-3fd59e8c-1815-4dc4-9a42-81ed03153607.png)  
-![stdio](https://user-images.githubusercontent.com/75885992/127013810-30aafab6-f764-4812-b730-07733082d323.png)  
 
   
 
 **az_putchar : getchar() -> 어셈블리어의 첫 내장함수 연습.**  
 ======================================================  
 # Linux
+
+
 # Linux
