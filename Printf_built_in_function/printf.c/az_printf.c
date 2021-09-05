@@ -260,8 +260,9 @@ void	az_o_support_p2(char flag, char *fmt, char f_addon)
 	int		param;
 
 	param = '\0';
-	if (flag == '-' && f_a
-			chrpos(fmt, '#') > 0)
+	if (flag == '-' && f_addon == '0')
+	{
+		if(az_chrpos(fmt, '#') > 0)
 		{
 			az_putchar('0');
 			tmp = az_strsub(fmt, az_chrpos(fmt, '0') + 1, az_strlen(fmt));
