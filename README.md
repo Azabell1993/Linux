@@ -1,6 +1,18 @@
 #Linux
 =======
 
+# 레포 모음
+- Copy_built_in_function
+- Printf_built_in_function
+- UbuntuOsUpdate
+- asm
+- az_putchar
+- shell_script
+
+# 이 저장소의 소개, 목적
+이 저장소는 Linux를 처음 접한 초보일 때 'Shell Script', 'Makefile', 'printf 함수 구현'으로 연습을 하였던 기초 쌓기 레포입니다.
+
+
 Make of Linux API Programming.
  
 **Copy_built_in_function : 리눅스 명령어 'cp' 모방 내장함수**  
