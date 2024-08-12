@@ -143,6 +143,8 @@ Plugin 'nvie/vim-flake8'
 " let g:syntastic_python_flake8_args='--ignore='    
 " 무시하고자하는
 
+Plugin 'jiangmiao/auto-pairs'
+
 call vundle#end()
 
 "---------------------------------------------Plugin 종료
