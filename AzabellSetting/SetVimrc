@@ -34,7 +34,9 @@ set mouse=a						" vim에서 마우스 사용
 set gfn=jin3.pcf\9
 
 
-"VundleVim/Vundle
+" VundleVim/Vundle
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" github clone
 
 filetype indent on
 filetype plugin on                  " required
