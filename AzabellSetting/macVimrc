@@ -1,0 +1,70 @@
+" 기본 설정
+set nocompatible              " VIM의 개선된 기능 사용 (필수)
+set encoding=utf-8            " 파일 인코딩을 UTF-8로 설정
+set nu                        " 행 번호 표시
+set tabstop=4                 " 탭을 4칸으로 설정
+set cursorline                " 현재 커서 라인 강조
+set t_Co=256                  " 색상 지원 설정
+set backspace=indent,eol,start " Backspace 사용시 줄 넘어가면서 수정 가능하게 설정
+
+" Vundle 설치 및 플러그인 관리 설정
+filetype off                  " 플러그인을 설정하기 전에 파일 형식을 비활성화
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" 플러그인 목록
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'udalov/kotlin-vim'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'hsanson/vim-android'
+Plugin 'scrooloose/nerdtree'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'nvie/vim-flake8'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'pangloss/vim-javascript'
+Plugin 'SirVer/ultisnips'
+Plugin 'isRuslan/vim-es6'
+
+call vundle#end()            " Vundle 종료, 필수
+
+filetype plugin indent on    " 플러그인 및 자동 들여쓰기 활성화 (한 번만 설정)
+
+" 구문 강조 및 파일 형식별 설정
+if has("syntax")
+  syntax on
+endif
+
+" 상태바 설정
+set laststatus=2
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+
+" NERDTree를 F7 키로 토글할 수 있도록 설정
+nmap <F7> :NERDTree<CR>
+nmap nerd :NERDTreeToggle<CR>
+
+" Python 코드 실행 및 컴파일
+autocmd FileType python nnoremap <buffer> <F5> :w<CR>:!python3 % <CR>
+
+" 자동 컴파일 매핑
+autocmd FileType c nnoremap <buffer> <F5> :w<CR>:!gcc -o %< % && ./%< <CR>
+autocmd FileType cpp nnoremap <buffer> <F5> :w<CR>:!g++ -o %< % && ./%< <CR>
+
+" 템플릿 설정
+iabbr __email jeewoo19930315@gmail.com
+iabbr <expr> __time strftime("%Y-%m-%d %H:%M:%S")
+iabbr <expr> __file expand('%:p')
+iabbr <expr> __name expand('%')
+iabbr <expr> __pwd expand('%:p:h')
+iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
+
+" YouCompleteMe 설정
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  " 자동 완성 설정 파일
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_key_invoke_completion = '<C-Space>'  " Ctrl + Space로 자동 완성 호출
+
+" 수정 모드 관련 문제를 방지하기 위한 설정
+set backspace=indent,eol,start  " Backspace 사용시 줄 넘어가면서 수정 가능하게 설정
