@@ -15,6 +15,8 @@ Plugin 'vim-airline/vim-airline'     " 상태바 강화 플러그인
 Plugin 'ctrlpvim/ctrlp.vim'          " 빠른 파일 찾기 플러그인
 Plugin 'airblade/vim-gitgutter'      " Git 변경 사항 표시 플러그인
 Plugin 'dense-analysis/ale'          " 실시간 문법 검사 플러그인
+" Vundle 플러그인 목록에 추가
+Plugin 'voldikss/vim-floaterm'
 
 call vundle#end()                    " Vundle 종료
 filetype plugin indent on            " 플러그인 및 자동 들여쓰기 활성화
@@ -22,6 +24,7 @@ filetype plugin indent on            " 플러그인 및 자동 들여쓰기 활�
 " NERDTree 설정
 let NERDTreeShowHidden=1             " 숨김 파일 표시
 map <Leader>nt <ESC>:NERDTree<CR>
+map <Leader>tm <ESC>:FloatermNew<CR>
 " let NERDTreeQuitOnOpen=1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|vendor$',
