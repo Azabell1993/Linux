@@ -13,132 +13,89 @@
 "    플러그인들이 자동으로 설치됩니다. 설치된 플러그인을 업데이트하려면
 "    :PluginUpdate를, 사용하지 않는 플러그인을 삭제하려면 :PluginClean을
 "    사용하세요.
-
-" 기본 파일 설정
-filetype indent on
-filetype plugin on                  " 플러그인 로드 및 파일 형식 인식
-
-" Vundle 초기화
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" 플러그인 설정 (여기에 플러그인 목록을 추가합니다)
-Plugin 'VundleVim/Vundle.vim'
-
-" GitHub에 있는 플러그인
-Plugin 'tpope/vim-fugitive'
-
-" vim-scripts.org의 플러그인
-" Plugin 'L9'
-
-" GitHub에 호스팅되지 않은 Git 플러그인
-Plugin 'git://git.wincent.com/command-t.git'
-
-" 로컬 머신에 있는 Git 리포지토리의 플러그인
-Plugin 'file:///home/$USER/path/to/plugin'
-
-" 서브디렉토리에 있는 플러그인의 실행 경로 설정
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" 모든 플러그인은 이 줄 이전에 추가되어야 합니다
-call vundle#end()            " Vundle 종료, 필수
-filetype plugin indent on    " 플러그인 및 자동 들여쓰기 활성화
-
-" 사용법 및 Vundle 관련 도움말
-" :PluginList       - 설정된 플러그인 목록을 표시합니다.
-" :PluginInstall    - 플러그인을 설치합니다. 업데이트는 `!`를 붙이거나 :PluginUpdate를 사용합니다.
-" :PluginSearch foo - 'foo'를 검색합니다. `!`를 붙여 로컬 캐시를 새로 고침합니다.
-" :PluginClean      - 사용하지 않는 플러그인을 제거합니다. `!`를 붙이면 자동으로 승인합니다.
-" 더 자세한 내용은 :h vundle을 참고하거나 Vundle의 FAQ를 확인하세요.
-
-" 추가적인 플러그인 설정
-Plugin 'udalov/kotlin-vim'
-Plugin 'jason0x43/vim-js-indent'
-Plugin 'hsanson/vim-android'
-Plugin 'scrooloose/nerdtree'
-
-" NERDTree를 F7 키로 토글할 수 있도록 설정
-nmap <F7> :NERDTree<CR>
-nmap nerd :NERDTreeToggle<CR>
-
-" 특정 파일 형식에 대한 설정
-" au BufNewFile,BufRead *.java :source ~/.vim/myjava.vim
-
-" Python 개발 환경을 위한 설정
-" ----------------------------------------------------------------------
-" 이 부분은 Python 개발을 위한 VIM 설정을 포함하고 있습니다.
-
-" 기본 설정
-set nocompatible              " VIM의 개선된 기능 사용 (필수)
-filetype off                  " 플러그인을 설정하기 전에 파일 형식을 비활성화
-
-" Vundle 초기화
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Vundle 플러그인 관리 시작
-call vundle#begin()
-
-" Vundle을 통한 플러그인 관리
-Plugin 'VundleVim/Vundle.vim'   " Vundle 자체 관리
-Plugin 'davidhalter/jedi-vim'   " Python 자동 완성 플러그인
-let g:jedi#show_call_signatures=0    " 함수 호출 시 인자 서명 비활성화
-let g:jedi#popup_select_first="0"    " 자동 완성 팝업 비활성화
-let g:jedi#force_py_version=3        " Python 3 버전 사용 강제
-Plugin 'hynek/vim-python-pep8-indent' " Python PEP8 자동 들여쓰기 플러그인
-filetype plugin indent on            " 플러그인 및 자동 들여쓰기 활성화
-Plugin 'nvie/vim-flake8'              " Python 문법 검사 플러그인
-Plugin 'jiangmiao/auto-pairs'         " 자동 괄호 닫기 플러그인
-
-" Vundle 종료
-call vundle#end()
-
 " 기본 VIM 설정
-" ----------------------------------------------------------------------
-if has("syntax")
-syntax on           " 구문 강조 활성화
-endif
-set t_Co=256        " 색상 지원 설정
-set encoding=utf-8  " 파일 인코딩을 UTF-8로 설정
-set nu              " 행 번호 표시
-set tabstop=4       " 탭을 4칸으로 설정
-set cursorline      " 현재 커서 라인 강조
+set nocompatible              " Vim의 개선된 기능 사용
+filetype off                  " 플러그인을 설정하기 전에 파일 형식을 비활성화
+set rtp+=~/.vim/bundle/Vundle.vim  " Vundle 경로 설정
 
-" 상태바 설정
-set laststatus=2    " 항상 상태바 표시
-set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\  " 상태바에 현재 위치 표시
+" Vundle 초기화
+call vundle#begin()
+
+" Vundle 플러그인 관리
+Plugin 'VundleVim/Vundle.vim'        " Vundle 자체 관리 플러그인
+Plugin 'tpope/vim-fugitive'          " Git 통합 플러그인
+Plugin 'scrooloose/nerdtree'         " 파일 탐색기 플러그인 (VSCode의 파일 트리 기능)
+Plugin 'Valloric/YouCompleteMe'      " 코드 자동 완성 플러그인
+Plugin 'vim-airline/vim-airline'     " 상태바 강화 플러그인
+Plugin 'ctrlpvim/ctrlp.vim'          " 빠른 파일 찾기 플러그인
+Plugin 'airblade/vim-gitgutter'      " Git 변경 사항 표시 플러그인
+Plugin 'dense-analysis/ale'          " 실시간 문법 검사 플러그인
+
+call vundle#end()                    " Vundle 종료
+filetype plugin indent on            " 플러그인 및 자동 들여쓰기 활성화
+
+
+
+" NERDTree 설정
+let NERDTreeShowHidden=1             " 숨김 파일 표시
+map <Leader>nt <ESC>:NERDTree<CR>
+" let NERDTreeQuitOnOpen=1
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|vendor$',
+    \ 'file': '\v\.(exe|so|dll)$'
+\ }
+
+" YouCompleteMe 설정
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_show_diagnostics_ui = 1
+
+" Vim Airline 설정
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" ALE 설정 (실시간 문법 검사)
+let g:ale_linters = {
+  \ 'python': ['flake8'],
+  \ 'javascript': ['eslint'],
+  \ }
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript': ['prettier'],
+  \ }
+let g:ale_fix_on_save = 1
+
+" 기본 Vim 설정
+syntax on                          " 구문 강조 사용
+set encoding=utf-8                 " 인코딩 설정
+set nu                             " 행 번호 표시
+set tabstop=4                      " 탭을 4칸으로 설정
+set shiftwidth=4                   " 자동 들여쓰기 4칸
+set expandtab                      " 탭을 공백으로 변환
+set autoindent                     " 자동 들여쓰기
+set smartindent                    " 스마트한 들여쓰기
+set cursorline                     " 현재 줄 강조 표시
+set laststatus=2                   " 상태바 항상 표시
+set incsearch                      " 점진적 검색 활성화
+set hlsearch                       " 검색어 강조 표시
+set ignorecase                     " 검색 시 대소문자 구분 안 함
+set mouse=a                        " 마우스 사용 허용
+set clipboard=unnamedplus          " 시스템 클립보드 사용
 
 " 파일 형식별 매핑 설정
-au FileType python map <f2> :!python3 %
-
-" Python 코드 실행 및 컴파일
-" F2 키를 눌러 Python 파일을 실행할 수 있도록 설정
+au FileType python map <F2> :!python3 %<CR>
 
 " 자동 컴파일 매핑
 autocmd FileType c nnoremap <buffer> <F5> :w<CR>:!gcc -o %< % && ./%< <CR>
 autocmd FileType cpp nnoremap <buffer> <F5> :w<CR>:!g++ -o %< % && ./%< <CR>
 autocmd FileType python nnoremap <buffer> <F5> :w<CR>:!python % <CR>
 
-" 템플릿 설정
+" 유용한 템플릿 설정
 iabbr __email jeewoo19930315@gmail.com
 iabbr <expr> __time strftime("%Y-%m-%d %H:%M:%S")
 iabbr <expr> __file expand('%:p')
 iabbr <expr> __name expand('%')
 iabbr <expr> __pwd expand('%:p:h')
 iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
-
-" 유용한 플러그인 추가
-Plugin 'Valloric/YouCompleteMe'
-
-" 스크립트 헤더 파일 설정
-au bufnewfile *.sh 0r /home/$USER/.vim/sh_header.temp
-
-" JavaScript 플러그인 설정
-Plugin 'pangloss/vim-javascript'
-let g:jsx_ext_required = 0
-
-" ES6 JavaScript 설정
-Plugin 'SirVer/ultisnips'
-Plugin 'isRuslan/vim-es6'
-
-" Syntastic 설정
-let g:syntastic_javascript_checkers = ['eslint']
