@@ -45,6 +45,13 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll)$'
 \ }
 
+nmap <F8> :SrcExplToggle<CR>                "F8 Key = SrcExpl Toggling
+nmap <C-H> <C-W>h                           "왼쪽 창으로 이동
+nmap <C-J> <C-W>j                           "아래 창으로 이동
+nmap <C-K> <C-W>k                           "윗 창으로 이동
+nmap <C-L> <C-W>l                           "오른쪽 창으로 이동
+" 세부 정보 출력
+
 " YouCompleteMe 설정
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
