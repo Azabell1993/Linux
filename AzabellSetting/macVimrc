@@ -1,5 +1,6 @@
 " 기본 VIM 설정
 set nocompatible              " Vim의 개선된 기능 사용
+set relativenumber
 filetype off                  " 플러그인을 설정하기 전에 파일 형식을 비활성화
 set rtp+=~/.vim/bundle/Vundle.vim  " Vundle 경로 설정
 
@@ -8,35 +9,58 @@ call vundle#begin()
 
 " Vundle 플러그인 관리
 Plugin 'VundleVim/Vundle.vim'        " Vundle 자체 관리 플러그인
-Plugin 'tpope/vim-fugitive'          " Git 통합 플러그인
+Plugin 'tpope/vim-fugitive'          " Git 통합 플러그인 (vim-fugitive 사용)
 Plugin 'scrooloose/nerdtree'         " 파일 탐색기 플러그인 (VSCode의 파일 트리 기능)
 Plugin 'Valloric/YouCompleteMe'      " 코드 자동 완성 플러그인
 Plugin 'vim-airline/vim-airline'     " 상태바 강화 플러그인
 Plugin 'ctrlpvim/ctrlp.vim'          " 빠른 파일 찾기 플러그인
 Plugin 'airblade/vim-gitgutter'      " Git 변경 사항 표시 플러그인
 Plugin 'dense-analysis/ale'          " 실시간 문법 검사 플러그인
-" Vundle 플러그인 목록에 추가
-Plugin 'voldikss/vim-floaterm'
+Plugin 'voldikss/vim-floaterm'       " 터미널 통합 플러그인
+Plugin 'Xuyuanp/nerdtree-git-plugin' " NERDTree와 Git 상태 통합 플러그인
 
+" Vundle 플러그인 목록에 추가
 call vundle#end()                    " Vundle 종료
 filetype plugin indent on            " 플러그인 및 자동 들여쓰기 활성화
+
+" NERDTree를 열 때 Git 상태를 표시하도록 설정
+let g:NERDTreeGitStatusEnable = 1
+
+" 특정 파일 형식 무시 (예: .git, .pyc, .swp)
+let g:NERDTreeIgnore = ['\.git$', '\.pyc$', '\.swp$']
+
+" NERDTree 기본 설정
+let NERDTreeShowHidden=1  " 숨김 파일 표시
+let NERDTreeMinimalUI=1   " 최소 UI
+let NERDTreeDirArrows=1   " 디렉토리 화살표 표시
+
+" NERDTree 새로 고침 매핑 (R 키)
+autocmd FileType nerdtree map <silent> R :NERDTreeRefreshRoot<CR>
+
+" Vim 시작 시 NERDTree 자동 실행
+autocmd VimEnter * NERDTree
+
+" 특정 파일 형식 무시 (예: .git, .pyc, .swp)
+let g:NERDTreeIgnore = ['\.git$', '\.pyc$', '\.swp$']
 
 " NERDTree 설정
 let NERDTreeShowHidden=1             " 숨김 파일 표시
 map <Leader>nt <ESC>:NERDTree<CR>
 map <Leader>tm <ESC>:FloatermNew<CR>
+map <Leader>tt <ESC>:below terminal<CR>
+
 " let NERDTreeQuitOnOpen=1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|vendor$',
     \ 'file': '\v\.(exe|so|dll)$'
 \ }
 
+"Source Explorer 환경설정
 nmap <F8> :SrcExplToggle<CR>                "F8 Key = SrcExpl Toggling
 nmap <C-H> <C-W>h                           "왼쪽 창으로 이동
 nmap <C-J> <C-W>j                           "아래 창으로 이동
 nmap <C-K> <C-W>k                           "윗 창으로 이동
 nmap <C-L> <C-W>l                           "오른쪽 창으로 이동
-" 세부 정보 출력
 
 " YouCompleteMe 설정
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
