@@ -40,9 +40,9 @@ int main(void) {
         // 여러 줄 입력 처리 루프
         while (fgets(line, MAXLINE, stdin)) {
             // 엔터만 입력된 경우 루프를 계속 돕니다.
-            // if (strcmp(line, "\n") == 0) {
-            //    continue;
-            // }
+            if (strcmp(line, "\n") == 0) {
+               continue;
+            }
 
             // 종료 명령어 처리
             if (!strncmp(line, "exit", 4) || !strncmp(line, "quit", 4)) {
@@ -50,14 +50,14 @@ int main(void) {
             }
 
             // "next >" 가 입력되면 다음 줄로 계속 입력 받음
-            if (strstr(line, "next >") != NULL) {
-                strcat(command, line);  // 입력을 command에 추가
-                fputs("next > ", stdout);
-                fflush(stdout);
-            } else {
-                strcat(command, line);  // 마지막 입력을 추가하고 종료
-                break;
-            }
+            // if (strstr(line, "next >") != NULL) {
+            //     strcat(command, line);  // 입력을 command에 추가
+            //     fputs("next > ", stdout);
+            //     fflush(stdout);
+            // } else {
+            //     strcat(command, line);  // 마지막 입력을 추가하고 종료
+            //     break;
+            // }
         }
 
         // 명령어 파싱 및 실행
